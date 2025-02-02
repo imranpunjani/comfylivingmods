@@ -1,4 +1,5 @@
 // pages/index.js
+import { motion } from 'framer-motion';
 import Head from 'next/head';
 import ContactForm from './components/ContactForm';
 import OptimizedImage from './components/OptimizedImage';
@@ -27,13 +28,18 @@ export default function Home() {
       {/* Header */}
       <header className="header">
         <div className="header-content">
-          <div className="logo">
+          <motion.div 
+            className="logo"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <BiSolidHomeHeart className="logo-icon" />
             <div>
               <h1>Comfortable Living Modifications</h1>
               <p className="tagline">Professional Home Modifications for Independent Living</p>
             </div>
-          </div>
+          </motion.div>
           <nav>
             <a href="#services">Our Services</a>
             <a href="#expertise">Expertise</a>
